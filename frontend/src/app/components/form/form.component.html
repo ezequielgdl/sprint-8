@@ -1,1 +1,15 @@
-<p>form works!</p>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="name" />
+  <label for="description">Description: </label>
+  <input id="description" type="text" formControlName="description" />
+  <label for="price">Price: </label>
+  <input id="price" type="number" formControlName="price" />
+  <label for="category">Category: </label>
+  <input id="category" type="text" formControlName="category" />
+  <label for="stockQuantity">Stock Quantity: </label>
+  <input id="stockQuantity" type="number" formControlName="stockQuantity" />
+  <button type="submit" [disabled]="!productForm.valid">
+    {{ selectedProduct ? "Update" : "Add" }} Product
+  </button>
+</form>

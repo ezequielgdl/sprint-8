@@ -1,3 +1,4 @@
+<div>Home works!</div>
 <div>
   <div class="overflow-auto m-8">
     <table class="border border-black/30 rounded-xl">
@@ -20,9 +21,13 @@
           <td class="hidden md:table-cell">{{ product.category }}</td>
           <td>{{ product.stockQuantity }}</td>
           <td>
-            <button class="bg-red-500 text-white px-4 py-2 rounded-md">
+            <button
+              class="bg-red-500 text-white px-4 py-2 rounded-md"
+              (click)="deleteProduct(product._id!)"
+            >
               Delete
             </button>
+            <button (click)="onProductSelected(product)">Edit</button>
           </td>
         </tr>
         }
@@ -30,3 +35,8 @@
     </table>
   </div>
 </div>
+<app-form
+  [selectedProduct]="selectedProduct"
+  (productAdded)="fetchProducts()"
+  (productUpdated)="onProductUpdated($event)"
+></app-form>
