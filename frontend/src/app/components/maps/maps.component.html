@@ -1,1 +1,16 @@
-<p>maps works!</p>
+<google-map
+  height="400px"
+  width="100%"
+  [center]="center"
+  [zoom]="zoom"
+  (mapClick)="addMarker($event)"
+>
+  @for (marker of markers; track $index) {
+  <map-marker
+    [position]="marker.position"
+    [title]="marker.title"
+    (mapClick)="removeMarker($index)"
+  >
+  </map-marker
+  >}
+</google-map>

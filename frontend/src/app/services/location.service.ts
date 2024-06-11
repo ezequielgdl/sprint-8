@@ -15,7 +15,7 @@ export class LocationService {
   }
 
   deleteLocation(location: any): Observable<any> {
-    const deleteUrl = `${this.apiUrl}/${location.id}`;
+    const deleteUrl = `${this.apiUrl}/${location.id || location._id}`;
     return this.http.delete(deleteUrl);
   }
 
