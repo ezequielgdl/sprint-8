@@ -1,0 +1,32 @@
+<div>
+  <div class="overflow-auto m-8">
+    <table class="border border-black/30 rounded-xl">
+      <thead class="border-collapse table-auto w-full text-sm">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th class="hidden md:table-cell">Category</th>
+          <th>Stock</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of products; track $index) {
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+          <td class="hidden md:table-cell">{{ product.category }}</td>
+          <td>{{ product.stockQuantity }}</td>
+          <td>
+            <button class="bg-red-500 text-white px-4 py-2 rounded-md">
+              Delete
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
