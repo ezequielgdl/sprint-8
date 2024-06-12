@@ -12,8 +12,8 @@ import { LocationService } from '../../services/location.service';
 export class MapsComponent {
   zoom = 13;
   center: google.maps.LatLngLiteral = {
-    lat: 41.390205,
-    lng: 2.154007,
+    lat: 41.3952,
+    lng: 2.1619,
   };
   options: google.maps.MapOptions = {
     gestureHandling: 'cooperative',
