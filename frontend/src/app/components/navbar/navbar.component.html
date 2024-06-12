@@ -1,10 +1,10 @@
 <nav class="bg-gray-800">
-  <div class="max-w-7xl mx-auto px-4 py-2">
-    <div class="flex justify-between">
+  <div class="container mx-auto px-4 py-2">
+    <div class="flex justify-between items-center">
       <div>
         <a routerLink="/" class="text-white text-xl font-bold">INPROCODE</a>
       </div>
-      <div class="flex space-x-4">
+      <div class="hidden md:flex space-x-4">
         <a
           routerLink="/"
           class="text-white hover:bg-gray-700 px-3 py-2 rounded-md"
@@ -26,6 +26,46 @@
           >Calendar</a
         >
       </div>
+      <div class="md:hidden">
+        <button class="text-white focus:outline-none" (click)="toggleMenu()">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div [class]="{ block: isMenuOpen, hidden: !isMenuOpen }" class="md:hidden">
+      <a
+        routerLink="/"
+        class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md"
+        >Home</a
+      >
+      <a
+        routerLink="/maps"
+        class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md"
+        >Maps</a
+      >
+      <a
+        routerLink="/graphs"
+        class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md"
+        >Graphs</a
+      >
+      <a
+        routerLink="/calendar"
+        class="block text-white hover:bg-gray-700 px-3 py-2 rounded-md"
+        >Calendar</a
+      >
     </div>
   </div>
 </nav>

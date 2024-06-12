@@ -1,15 +1,50 @@
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+<form
+  [formGroup]="productForm"
+  (ngSubmit)="onSubmit()"
+  class="flex flex-col w-full md:w-2/3 lg:w-1/2 mx-auto text-center space-y-4 p-4"
+>
   <label for="name">Name: </label>
-  <input id="name" type="text" formControlName="name" />
+  <input
+    class="border-gray-300 border shadow-sm rounded-lg"
+    id="name"
+    type="text"
+    formControlName="name"
+  />
   <label for="description">Description: </label>
-  <input id="description" type="text" formControlName="description" />
+  <input
+    class="border-gray-300 border shadow-sm rounded-lg"
+    id="description"
+    type="text"
+    formControlName="description"
+  />
   <label for="price">Price: </label>
-  <input id="price" type="number" formControlName="price" />
+  <input
+    class="border-gray-300 border shadow-sm rounded-lg"
+    id="price"
+    type="number"
+    min="0"
+    formControlName="price"
+  />
   <label for="category">Category: </label>
-  <input id="category" type="text" formControlName="category" />
+  <input
+    class="border-gray-300 border shadow-sm rounded-lg"
+    id="category"
+    type="text"
+    formControlName="category"
+  />
   <label for="stockQuantity">Stock Quantity: </label>
-  <input id="stockQuantity" type="number" formControlName="stockQuantity" />
-  <button type="submit" [disabled]="!productForm.valid">
+  <input
+    class="border-gray-300 border shadow-sm rounded-lg"
+    id="stockQuantity"
+    min="0"
+    type="number"
+    formControlName="stockQuantity"
+  />
+  <button
+    class="bg-yellow-500 py-2 rounded-lg text-white"
+    type="submit"
+    [disabled]="!productForm.valid"
+  >
     {{ selectedProduct ? "Update" : "Add" }} Product
   </button>
 </form>

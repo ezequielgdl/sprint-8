@@ -1,40 +1,47 @@
-<div>Home works!</div>
-<div>
-  <div class="overflow-auto m-8">
-    <table class="border border-black/30 rounded-xl">
-      <thead class="border-collapse table-auto w-full text-sm">
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Price</th>
-          <th class="hidden md:table-cell">Category</th>
-          <th>Stock</th>
-          <th>Actions</th>
+<section class="flex flex-col items-center justify-center p-4 sm:p-8">
+  <h1 class="text-2xl font-semibold mb-4">INVENTORY</h1>
+  <div class="overflow-auto w-full">
+    <table class="min-w-full border border-gray-300 rounded-lg">
+      <thead>
+        <tr class="bg-gray-200 text-left">
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2 hidden md:table-cell">Description</th>
+          <th class="px-4 py-2">Price</th>
+          <th class="px-4 py-2 hidden md:table-cell">Category</th>
+          <th class="px-4 py-2">Stock</th>
+          <th class="px-4 py-2">Actions</th>
         </tr>
       </thead>
       <tbody>
         @for (product of products; track $index) {
-        <tr>
-          <td>{{ product.name }}</td>
-          <td>{{ product.description }}</td>
-          <td>{{ product.price }}</td>
-          <td class="hidden md:table-cell">{{ product.category }}</td>
-          <td>{{ product.stockQuantity }}</td>
-          <td>
+        <tr class="border-t">
+          <td class="px-4 py-2">{{ product.name }}</td>
+          <td class="px-4 py-2 hidden md:table-cell">
+            {{ product.description }}
+          </td>
+          <td class="px-4 py-2">{{ product.price }}</td>
+          <td class="px-4 py-2 hidden md:table-cell">{{ product.category }}</td>
+          <td class="px-4 py-2">{{ product.stockQuantity }}</td>
+          <td class="px-4 py-2 flex space-x-2">
             <button
-              class="bg-red-500 text-white px-4 py-2 rounded-md"
+              class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 transition duration-300"
               (click)="deleteProduct(product._id!)"
             >
-              Delete
+              <i class="bi bi-trash-fill"></i>
             </button>
-            <button (click)="onProductSelected(product)">Edit</button>
+            <button
+              class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300"
+              (click)="onProductSelected(product)"
+            >
+              <i class="bi bi-pencil-fill"></i>
+            </button>
           </td>
         </tr>
         }
       </tbody>
     </table>
   </div>
-</div>
+</section>
 <app-form
   [selectedProduct]="selectedProduct"
   (productAdded)="fetchProducts()"
