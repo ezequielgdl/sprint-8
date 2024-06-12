@@ -1,1 +1,24 @@
-<p>graphs works!</p>
+<section class="">
+  <div class="border border-gray-300 rounded-lg md:w-2/3 mx-auto my-3 p-3">
+    <h3 class="text-center font-bold text-xl">EVENT ANALYSIS</h3>
+    <canvas
+      baseChart
+      [data]="barChartData"
+      [options]="barChartOptions"
+      [type]="'bar'"
+    >
+    </canvas>
+  </div>
+  <div class="border border-gray-300 rounded-lg md:w-2/3 mx-auto my-3 p-3">
+    <h3 class="text-center font-bold text-xl">PRODUCT STOCK GRAPH</h3>
+    @if (productLabels.length > 0 && productStock.length > 0) {
+    <canvas
+      baseChart
+      [data]="pieChartData"
+      [options]="pieChartOptions"
+      [type]="'pie'"
+    >
+    </canvas>
+    }
+  </div>
+</section>
