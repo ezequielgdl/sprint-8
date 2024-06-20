@@ -1,10 +1,31 @@
-# Frontend
+# Inprocode
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+Este proyecto fue creado con [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+El backend está creado con Node, Express, Mongoose y MongoDB. Utiliza los componentes Google Maps, FullCalendar y ChartJS.
+El objetivo de este proyecto es crear un backend simple para poder hacer operaciones CRUD en ella y poder utilizar plugins en el frontend.
 
-## Development server
+## Instalación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1 - Clonar el repositorio
+
+`git clone`
+
+2 - Abrir una terminal para el backend y asegurate de tener instalado Node, Express y Mongoose.
+
+3 - Abrir una terminal para la carpeta frontend y usar el comando `npm install` para instalar las dependencias necesarias.
+
+4 - En la terminal de backend, usar el comando `node app.js` para comenzar el servidor del backend.
+
+5 - En la terminal del frontend, usar el comando `ng serve` para comenzar el servidor local de frontend.
+
+## Tecnologías
+
+- Angular 18
+- TailwindCSS
+- Node
+- Express
+- Mongoose
+- MongoDB
 
 ## Code scaffolding
 
