@@ -67,6 +67,7 @@ export class FormComponent {
             next: (updatedProduct) => {
               this.productUpdated.emit(updatedProduct);
               this.productForm.reset();
+              alert('Product updated!');
             },
             error: (error) => {
               console.error('Error updating product:', error);
@@ -76,6 +77,8 @@ export class FormComponent {
         this.productService.createProduct(newProduct).subscribe({
           next: (createdProduct) => {
             this.productAdded.emit(createdProduct);
+            this.productForm.reset();
+            alert('Product created!');
           },
           error: (error) => {
             console.error('Error creating product:', error);
